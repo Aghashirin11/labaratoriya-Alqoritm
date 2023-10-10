@@ -1,0 +1,14 @@
+import math
+eps = 0.01
+x = float(input("x = "))
+s = 0
+z1 = 1
+z = x
+i = 1
+while math.fabs(z) > eps:
+    s+=z
+    i+=1
+    z1 = x**i *(-(-1)**i)
+    z = z1/i
+    print(z)
+print("S = ",s)
