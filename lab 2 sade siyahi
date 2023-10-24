@@ -1,0 +1,12 @@
+import random
+n=int(input('nece eded olacaq?-'))
+a=[0]*n
+s=1
+from random import uniform
+for i in range(n):
+    a[i]=random.uniform(0,7)
+print(a)
+for i in a:
+    s=s*i
+print(s)
+
