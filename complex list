@@ -1,0 +1,21 @@
+import random
+def printList(lst):
+    for i in range(len(lst)):
+        for j in range(len(lst[i])):
+            print(lst[i][j], end='    ')
+        print()
+n = int(input('setir sayini daxil edin--'))
+m = int(input('sutun sayini daxil edin--'))
+a = []
+for i in range(n):
+    a.append([])
+    for j in range(m):
+        a[i].append(random.randint(1,9))
+printList(a)
+print('')
+for i in range(n):
+    p = 0
+    for j in range(m):
+            p = p + a[i][j]
+    if p != 1:
+        print(i + 1, "-ci setrdeki elementlerin cemi:", p)
