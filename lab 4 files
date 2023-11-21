@@ -1,0 +1,69 @@
+#LONG WAY BEGIN
+
+import random
+lst = [ ]
+l = 0
+cem = 0
+for i in range(10):
+    number = random.randint(0, 101)
+    lst = lst + [number]
+print("lst = ", lst)
+#ededleri secdiyimiz yer bitti
+
+#fayl-a yazma baslayir
+f = open('file1.txt', 'w')
+f.write('\n')
+for i in lst:
+    if i%2!=0:
+        l = l+1
+        f.write(str(i) + ' ')
+f.close()
+#fayl-a yazma bitti
+
+#fayli oxuma baslayir
+f=open('file1.txt','r')
+s=f.readline()
+lst2=[ ]
+for line in f:
+    strs=line.split(' ')#strs vektorunun yaradilmasi
+    print('strs=',strs)
+    for s in strs:
+        if s!='':
+            lst2=lst2+[int(s)]
+print('lst2=',lst2)
+f.close()
+#fayli oxuma yeri bitti
+
+for i in lst2:
+    print(i)
+    cem+=i
+print('tek ededlerin cemi =',cem)
+
+#LONG WAY END
+
+
+#SHORT WAY BEGIN
+
+import random
+s = 0
+lst = []
+for i in range(10):
+    number = random.randint(0,101)
+    lst = lst  + [number]
+print('lst = ', lst)
+length=0
+with open('file.txt','w') as file:
+    for i in lst:
+        if i % 2 != 0:
+            file.write(str(i) + ' ')
+            length +=1
+    file.write('\nUmumi eded sayi = '+str(len(lst)))
+    file.write('\ntek eded sayi = ' + str(length))
+with open('file.txt','r') as file:
+    x =  file.read().splitlines()
+    print('tek ededlerin siyahisi = ',x[0].split(' '))
+for i in x[0].split():
+    print(int(i))
+    s+=int(i)
+print('cem = ',s)
+#SHORT WAY END
